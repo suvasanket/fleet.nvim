@@ -28,7 +28,7 @@ function M.setup()
 		ErrorMsg = { fg = palette.red_error, underline = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
 		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
-		Folded = { bg = palette.darker, fg = palette.light_gray }, -- line used for closed folds
+        Folded = { bg = "NONE", fg = "#7D7C7C" }, -- line used for closed folds
 		-- FoldColumn   = { }, -- 'foldcolumn'
 		SignColumn = { bg = palette.background, fg = palette.dark_gray }, -- column where |signs| are displayed
 		-- IncSearch    = { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
