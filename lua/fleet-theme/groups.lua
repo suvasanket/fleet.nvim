@@ -83,7 +83,7 @@ function M.setup()
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
 		Float = { fg = palette.lightest }, --    a floating point constant: 2.3e10
 
-		Identifier = { fg = palette.light_blue }, -- (preferred) any variable name
+        Identifier = { fg = palette.light }, -- (preferred) any variable name
 		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
 
 		Keyword = { fg = palette.cyan }, --  any other keyword
@@ -100,7 +100,7 @@ function M.setup()
 		Macro = { fg = palette.green, bold = true }, --    same as Define
 		PreCondit = { link = "Keyword" }, --  preprocessor #if, #else, #endif, etc.
 
-		Type = { fg = palette.light_blue }, -- (preferred) int, long, char, etc.
+		Type = { fg = palette.red }, -- (preferred) int, long, char, etc.
 		-- StorageClass   = { fg = "#A1B56C" }, -- static, register, volatile, etc.
 		Structure = { link = "Type" }, --  struct, union, enum, etc.
 		Typedef = { link = "Type" }, --  A typedef
