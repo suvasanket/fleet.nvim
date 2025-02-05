@@ -173,8 +173,8 @@ function M.setup()
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
 		["@operator"]           = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-		["@parameter"] = { fg = palette.purple_accent }, -- Parameters of a function.
-		["@parameter.reference"] = { fg = palette.purple }, -- References to parameters of a function.
+		["@parameter"] = { fg = palette.pink_accent }, -- Parameters of a function.
+		["@parameter.reference"] = { fg = palette.pink }, -- References to parameters of a function.
 		-- ["@property"]           = { }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
