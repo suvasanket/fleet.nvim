@@ -179,7 +179,7 @@ function M.setup()
 		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		-- ["@parameter"]          = { }, -- Parameters of a function.
 		-- ["@parameter.reference"] = { }, -- References to parameters of a function.
-		["@property"] = { fg = palette.pink }, -- Same as `["@field"]`.
+		["@property"] = { fg = palette.red }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
