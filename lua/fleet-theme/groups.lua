@@ -160,10 +160,10 @@ function M.setup()
 		-- ["@field"]              = { }, -- Object and struct fields.
 		-- ["@float"]              = { }, -- Floating-point number literals.
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
-		["@function.builtin"] = { fg = palette.green }, -- Built-in functions: `print` in Lua.
-		["@function.macro"] = { fg = palette.green }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+		["@function.builtin"] = { fg = palette.green_accent }, -- Built-in functions: `print` in Lua.
+		["@function.macro"] = { fg = palette.green_accent }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 		-- ["@include"]            = { }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-		["@keyword"] = { fg = palette.purple_accent }, -- Keywords that don't fit into other categories.
+		["@keyword"] = { fg = palette.green }, -- Keywords that don't fit into other categories.
 		-- ["@keyword.function"]    = { }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		-- ["@keyword.return"]      = { }, -- Keywords like `return` and `yield`.
