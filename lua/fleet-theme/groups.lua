@@ -113,8 +113,8 @@ function M.setup()
 		-- Debug          = { }, --    debugging statements
 
 		Underlined = { fg = palette.yellow, underline = true }, -- (preferred) text that stands out, HTML links
-		-- Bold       = { bold = true },
-		-- Italic     = { italic = true },
+		Bold       = { bold = true },
+		Italic     = { italic = true },
 
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         = { }, -- (preferred) left blank, hidden  |hl-Ignore|
