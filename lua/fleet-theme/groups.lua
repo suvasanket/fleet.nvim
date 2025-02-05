@@ -14,7 +14,7 @@ function M.setup()
 		-- CursorIM     = { }, -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn = { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory = { fg = palette.green }, -- directory names (and other special names in listings)
+		Directory = { fg = palette.lightest, bold = true }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = palette.diff_plus }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = palette.blue_accent }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = palette.red_accent }, -- diff mode: Deleted line |diff.txt|
@@ -42,14 +42,14 @@ function M.setup()
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		NormalFloat = { link = "Normal" }, -- Normal text in floating windows.
-		NormalNC = { bg = palette.darkest }, -- normal text in non-current windows
+		NormalNC = { link = "Normal" }, -- normal text in non-current windows
 		Pmenu = { bg = palette.darker, fg = palette.light }, -- Popup menu: normal item.
 		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
 		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
 		Search = { fg = palette.lightest, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		QuickFixLine = { fg = palette.yellow }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine = { bg = Normal.bg.mix(Search.bg, 40)  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		SpecialKey = { link = "Directory" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		-- SpellBad     = { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
