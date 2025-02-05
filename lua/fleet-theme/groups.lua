@@ -173,17 +173,17 @@ function M.setup()
         -- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
         -- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
         -- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-        -- ["@parameter"]          = { }, -- Parameters of a function.
-        -- ["@parameter.reference"] = { }, -- References to parameters of a function.
+        ["@parameter"]          = { fg = palette.purple_accent }, -- Parameters of a function.
+        ["@parameter.reference"] = { fg = palette.purple  }, -- References to parameters of a function.
         -- ["@property"]           = { }, -- Same as `["@field"]`.
         ["@punctuation.delimiter"]     = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
         ["@punctuation.bracket"]       = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
         ["@punctuation.special"]       = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
         -- ["@repeat"]             = { }, -- Keywords related to loops: `for`, `while`, etc.
-        ["@string"]             = { fg = palette.pink }, -- String literals.
+        ["@string"]             = { fg = palette.green }, -- String literals.
         -- ["@string.regex"]        = { }, -- Regular expression literals.
         -- ["@string.escape"]       = { }, -- Escape characters within a string: `\n`, `\t`, etc.
-        ["@string.special"]      = { fg = palette.cyan }, -- Strings with special meaning that don't fit into the previous categories.
+        ["@string.special"]      = { fg = palette.green_accent }, -- Strings with special meaning that don't fit into the previous categories.
         -- ["@symbol"]             = { }, -- Identifiers referring to symbols or atoms.
         ["@tag"]             = { fg = palette.light_blue }, -- Tags like HTML tag names.
         ["@tag.attribute"]   = { fg = palette.purple }, -- HTML tag attributes.
