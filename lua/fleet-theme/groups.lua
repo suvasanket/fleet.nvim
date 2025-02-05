@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-	local config = require("fleet").config
-	local palette = require("fleet.palette").palette
+    local config = require("fleet-theme").config
+    local palette = require("fleet-theme.palette").palette
 
 	local groups = {
 		Normal = { bg = palette.background, fg = palette.light }, -- normal text

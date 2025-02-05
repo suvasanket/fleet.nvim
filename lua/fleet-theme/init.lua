@@ -22,7 +22,7 @@ function M.load()
     vim.g.colors_name = "fleet"
     vim.o.termguicolors = true
 
-    local groups = require("fleet.groups").setup()
+    local groups = require("fleet-theme.groups").setup()
 
     -- add highlights
     for group, settings in pairs(groups) do
