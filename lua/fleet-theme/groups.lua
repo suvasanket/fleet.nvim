@@ -81,7 +81,7 @@ function M.setup()
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
-		Float = { fg = palette.yellow }, --    a floating point constant: 2.3e10
+		Float = { fg = palette.lightest }, --    a floating point constant: 2.3e10
 
 		Identifier = { fg = palette.light }, -- (preferred) any variable name
 		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
@@ -172,7 +172,7 @@ function M.setup()
 		["@namespace"] = { fg = palette.green }, -- Identifiers referring to modules and namespaces.
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
-		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
+		["@operator"]           = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		["@parameter"] = { fg = palette.purple_accent }, -- Parameters of a function.
 		["@parameter.reference"] = { fg = palette.purple }, -- References to parameters of a function.
 		-- ["@property"]           = { }, -- Same as `["@field"]`.

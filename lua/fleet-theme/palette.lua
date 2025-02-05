@@ -22,7 +22,7 @@ M.palette = {
     yellow = "#e5c995",
     red = "#E195AB",
 
-    purple_accent = "#DAD2FF",
+    purple_accent = "#B2A5FF",
     blue_accent = "#37AFE1",
     pink_accent = "#A64D79",
     green_accent = "#A5B68D",
