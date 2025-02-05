@@ -13,8 +13,8 @@ function M.setup()
 		-- lCursor      = { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM     = { }, -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn = { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine = { bg = palette.darker }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory = { fg = palette.cyan }, -- directory names (and other special names in listings)
+		CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory = { fg = palette.green }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = palette.diff_plus }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = palette.blue_accent }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = palette.red_accent }, -- diff mode: Deleted line |diff.txt|
@@ -41,8 +41,8 @@ function M.setup()
 		-- MsgSeparator = { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		-- NormalFloat  = { }, -- Normal text in floating windows.
-		-- NormalNC     = { }, -- normal text in non-current windows
+		NormalFloat = { link = "Normal" }, -- Normal text in floating windows.
+		NormalNC = { bg = palette.darkest }, -- normal text in non-current windows
 		Pmenu = { bg = palette.darker, fg = palette.light }, -- Popup menu: normal item.
 		PmenuSel = { bg = palette.selection, fg = palette.light, bold = true }, -- Popup menu: selected item.
 		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
@@ -61,7 +61,7 @@ function M.setup()
 
 		TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
 		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
-		TabLineSel = { bg = "NONE", fg = palette.lightest, bold = true }, -- tab pages line, active tab page label
+		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
 		Title = { fg = palette.green, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
@@ -84,7 +84,7 @@ function M.setup()
 		Float = { fg = palette.yellow }, --    a floating point constant: 2.3e10
 
 		Identifier = { fg = palette.light }, -- (preferred) any variable name
-		Function = { fg = palette.yellow }, -- function name (also: methods for classes)
+		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
 
 		Keyword = { fg = palette.cyan }, --  any other keyword
 		Statement = { link = "Keyword" }, -- (preferred) any statement
@@ -151,7 +151,7 @@ function M.setup()
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-		-- ["@constant"]           = { }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
+		["@constant"] = { bold = true }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
 		["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
 		-- ["@constant.macro"]         = { }, -- Constants defined by macros: `NULL` in C.
 		["@constructor"] = { fg = palette.yellow }, -- Constructor calls and definitions: `= {}` in Lua, and Java constructors.
@@ -180,7 +180,7 @@ function M.setup()
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
 		-- ["@repeat"]             = { }, -- Keywords related to loops: `for`, `while`, etc.
-		["@string"] = { fg = palette.green }, -- String literals.
+		["@string"] = { fg = "#77B254" }, -- String literals.
 		-- ["@string.regex"]        = { }, -- Regular expression literals.
 		-- ["@string.escape"]       = { }, -- Escape characters within a string: `\n`, `\t`, etc.
 		["@string.special"] = { fg = palette.green_accent }, -- Strings with special meaning that don't fit into the previous categories.
