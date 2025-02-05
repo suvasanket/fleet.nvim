@@ -6,8 +6,9 @@ M.palette = {
     darker = "#303030",
     dark = "#505050",
 
-    light = "#CCCCCC",
-    lightest = "#ffffff",
+    light = "#C4C4C4",
+    lighter = "#DADADB",
+    lightest = "#FFFFFF",
 
     dark_gray = "#353535",
     light_gray = "#606060",

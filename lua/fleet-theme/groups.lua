@@ -44,11 +44,11 @@ function M.setup()
 		NormalFloat = { link = "Normal" }, -- Normal text in floating windows.
 		NormalNC = { bg = palette.darkest }, -- normal text in non-current windows
 		Pmenu = { bg = palette.darker, fg = palette.light }, -- Popup menu: normal item.
-		PmenuSel = { bg = palette.selection, fg = palette.light, bold = true }, -- Popup menu: selected item.
+		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
 		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
-		Search = { fg = palette.light, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search = { fg = palette.lightest, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		QuickFixLine = { fg = palette.yellow }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine = { bg = Normal.bg.mix(Search.bg, 40)  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		SpecialKey = { link = "Directory" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -77,7 +77,7 @@ function M.setup()
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
 		Constant = { fg = palette.purple }, -- (preferred) any constant
-		String = { fg = palette.pink }, --   a string constant: "this is a string"
+		String = { fg = palette.green }, --   a string constant: "this is a string"
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
@@ -180,7 +180,7 @@ function M.setup()
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
 		-- ["@repeat"]             = { }, -- Keywords related to loops: `for`, `while`, etc.
-		["@string"] = { fg = "#77B254" }, -- String literals.
+		["@string"] = { fg = "#83AE5B" }, -- String literals.
 		-- ["@string.regex"]        = { }, -- Regular expression literals.
 		-- ["@string.escape"]       = { }, -- Escape characters within a string: `\n`, `\t`, etc.
 		["@string.special"] = { fg = palette.green_accent }, -- Strings with special meaning that don't fit into the previous categories.
