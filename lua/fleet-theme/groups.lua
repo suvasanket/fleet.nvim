@@ -6,7 +6,7 @@ function M.setup()
 
 	local groups = {
 		Normal = { bg = palette.background, fg = palette.light }, -- normal text
-		Comment = { fg = palette.light_gray }, -- any comment
+		Comment = { fg = palette.light_gray, italic = true }, -- any comment
 		-- ColorColumn  = { }, -- used for the columns set with 'colorcolumn'
 		-- Conceal      = { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { bg = palette.light, fg = palette.dark_gray }, -- character under the cursor
@@ -28,7 +28,7 @@ function M.setup()
 		ErrorMsg = { fg = palette.red_error, underline = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
 		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
-        Folded = { bg = "NONE", fg = "#7D7C7C" }, -- line used for closed folds
+		Folded = { bg = "NONE", fg = "#7D7C7C" }, -- line used for closed folds
 		-- FoldColumn   = { }, -- 'foldcolumn'
 		SignColumn = { bg = palette.background, fg = palette.dark_gray }, -- column where |signs| are displayed
 		-- IncSearch    = { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -43,7 +43,7 @@ function M.setup()
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		NormalFloat = { link = "Normal" }, -- Normal text in floating windows.
 		NormalNC = { link = "Normal" }, -- normal text in non-current windows
-		Pmenu = { bg = palette.darker, fg = palette.light }, -- Popup menu: normal item.
+		Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
 		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
 		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
 		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
@@ -83,7 +83,7 @@ function M.setup()
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
 		Float = { fg = palette.lightest }, --    a floating point constant: 2.3e10
 
-		Identifier = { fg = palette.light }, -- (preferred) any variable name
+		Identifier = { fg = palette.light_blue }, -- (preferred) any variable name
 		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
 
 		Keyword = { fg = palette.cyan }, --  any other keyword
@@ -113,8 +113,8 @@ function M.setup()
 		-- Debug          = { }, --    debugging statements
 
 		Underlined = { fg = palette.yellow, underline = true }, -- (preferred) text that stands out, HTML links
-		Bold       = { bold = true },
-		Italic     = { italic = true },
+		Bold = { bold = true },
+		Italic = { italic = true },
 
 		-- ("Ignore", below, may be invisible...)
 		-- Ignore         = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -162,7 +162,7 @@ function M.setup()
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
 		["@function.builtin"] = { fg = palette.green_accent }, -- Built-in functions: `print` in Lua.
 		["@function.macro"] = { fg = palette.green_accent }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-		-- ["@include"]            = { }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
+		["@include"] = { bold = true }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 		["@keyword"] = { fg = palette.cyan }, -- Keywords that don't fit into other categories.
 		-- ["@keyword.function"]    = { }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
@@ -172,7 +172,7 @@ function M.setup()
 		["@namespace"] = { fg = palette.green }, -- Identifiers referring to modules and namespaces.
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
-		["@operator"]           = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
+		["@operator"] = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		["@parameter"] = { fg = palette.pink }, -- Parameters of a function.
 		["@parameter.reference"] = { fg = palette.purple }, -- References to parameters of a function.
 		-- ["@property"]           = { }, -- Same as `["@field"]`.
