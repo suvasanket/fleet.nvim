@@ -1,19 +1,19 @@
 local M = {}
 
 function M.setup()
-    local config = require("fleet-theme").config
-    local palette = require("fleet-theme.palette").palette
+	local config = require("fleet-theme").config
+	local palette = require("fleet-theme.palette").palette
 
 	local groups = {
 		Normal = { bg = palette.background, fg = palette.light }, -- normal text
-        Comment = { fg = palette.light_gray, italic = true }, -- any comment
+		Comment = { fg = palette.light_gray, italic = true }, -- any comment
 		-- ColorColumn  = { }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = palette.purple, bold = true }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { bg = palette.light, fg = palette.dark_gray }, -- character under the cursor
 		-- lCursor      = { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM     = { }, -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn = { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory = { fg = palette.cyan }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = palette.diff_plus }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = palette.blue_accent }, -- diff mode: Changed line |diff.txt|
@@ -27,8 +27,8 @@ function M.setup()
 		-- TermCursorNC = { }, -- cursor in an unfocused terminal
 		ErrorMsg = { fg = palette.red_error, underline = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
-        WinSeparator = { link = "FloatBorder" }, -- highlights window separators
-        Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
+		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
+		Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
 		-- FoldColumn   = { }, -- 'foldcolumn'
 		SignColumn = { bg = palette.background, fg = palette.dark_gray }, -- column where |signs| are displayed
 		-- IncSearch    = { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -44,13 +44,13 @@ function M.setup()
 		NormalFloat = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
 		FloatBorder = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
 		-- NormalNC     = { }, -- normal text in non-current windows
-        Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
-        PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
-        PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
-        PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
+		Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
+		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
+		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
+		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
 		Search = { fg = palette.light, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine = { bg = Normal.bg.mix(Search.bg, 40)  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		SpecialKey = { link = "Directory" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		-- SpellBad     = { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -60,9 +60,9 @@ function M.setup()
 		StatusLine = { bg = palette.focus, fg = "#898989" }, -- status line of current window
 		StatusLineNC = { bg = palette.focus, fg = "#898989" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
-        TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
-        TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
-        TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
+		TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
+		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
+		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
 		Title = { fg = palette.green, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
@@ -78,7 +78,7 @@ function M.setup()
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
 		Constant = { fg = palette.red }, -- (preferred) any constant
-		String = { fg = palette.pink }, --   a string constant: "this is a string"
+		String = { fg = "#83AE5B" }, --   a string constant: "this is a string"
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
@@ -163,7 +163,7 @@ function M.setup()
 		-- ["@float"]              = { }, -- Floating-point number literals.
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
 		["@function.call"] = { fg = palette.yellow },
-		["@function.builtin"] = { fg = palette.lime }, -- Built-in functions: `print` in Lua.
+		["@function.builtin"] = { fg = palette.red }, -- Built-in functions: `print` in Lua.
 		["@function.macro"] = { fg = palette.lime }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 		["@function.method.call"] = { link = "@function.call" }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 		["@include"] = { fg = palette.lime }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
@@ -179,12 +179,12 @@ function M.setup()
 		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		-- ["@parameter"]          = { }, -- Parameters of a function.
 		-- ["@parameter.reference"] = { }, -- References to parameters of a function.
-		["@property"] = { fg = palette.red }, -- Same as `["@field"]`.
+		["@property"] = { fg = palette.green_accent }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
 		-- ["@repeat"]             = { }, -- Keywords related to loops: `for`, `while`, etc.
-        ["@string"] = { fg = "#83AE5B" }, -- String literals.
+		["@string"] = { fg = "#83AE5B" }, -- String literals.
 		-- ["@string.regex"]        = { }, -- Regular expression literals.
 		-- ["@string.escape"]       = { }, -- Escape characters within a string: `\n`, `\t`, etc.
 		["@string.special"] = { fg = palette.cyan }, -- Strings with special meaning that don't fit into the previous categories.
