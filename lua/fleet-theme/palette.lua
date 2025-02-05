@@ -9,13 +9,13 @@ M.palette = {
     light = "#CCCCCC",
     lightest = "#ffffff",
 
-    dark_gray = "#909090",
-    light_gray = "#505050",
+    dark_gray = "#353535",
+    light_gray = "#606060",
     purple = "#a390f0",
     light_blue = "#A1E3F9",
     blue = "#98D8EF",
     pink = "#FCC6FF",
-    green = "#afcb85",
+    green = "#B1D690",
     cyan = "#78d0bd",
     orange = "#efb080",
     yellow = "#e5c995",
@@ -36,7 +36,7 @@ M.palette = {
 
     error_bg = "#4d2a2c",
     warning_bg = "#4e321b",
-    info_bg = "#484849",
+    info_bg = "#AAB99A",
     hint_bg = "#263c50",
 }
 
