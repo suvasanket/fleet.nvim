@@ -1,20 +1,20 @@
 local M = {}
 
 function M.setup()
-	local config = require("fleet-theme").config
-	local palette = require("fleet-theme.palette").palette
+	local config = require("fleet").config
+	local palette = require("fleet.palette").palette
 
 	local groups = {
 		Normal = { bg = palette.background, fg = palette.light }, -- normal text
-		Comment = { fg = palette.light_gray, italic = true }, -- any comment
+        Comment = { fg = palette.light_gray, italic = true }, -- any comment
 		-- ColorColumn  = { }, -- used for the columns set with 'colorcolumn'
-		-- Conceal      = { }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+		Conceal = { fg = palette.purple, bold = true }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { bg = palette.light, fg = palette.dark_gray }, -- character under the cursor
 		-- lCursor      = { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM     = { }, -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn = { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		Directory = { fg = palette.lightest, bold = true }, -- directory names (and other special names in listings)
+        CursorLine = { bg = palette.focus }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		Directory = { fg = palette.cyan }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = palette.diff_plus }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = palette.blue_accent }, -- diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = palette.red_accent }, -- diff mode: Deleted line |diff.txt|
@@ -27,41 +27,42 @@ function M.setup()
 		-- TermCursorNC = { }, -- cursor in an unfocused terminal
 		ErrorMsg = { fg = palette.red_error, underline = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
-		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
-		Folded = { bg = "NONE", fg = "#7D7C7C" }, -- line used for closed folds
+        WinSeparator = { link = "FloatBorder" }, -- highlights window separators
+        Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
 		-- FoldColumn   = { }, -- 'foldcolumn'
 		SignColumn = { bg = palette.background, fg = palette.dark_gray }, -- column where |signs| are displayed
 		-- IncSearch    = { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		-- Substitute   = { }, -- |:substitute| replacement text highlighting
 		LineNr = { fg = palette.dark_gray }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { bg = palette.darker, fg = palette.light, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		MatchParen = { bg = palette.darker }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		-- ModeMsg      = { }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MatchParen = { bg = palette.darker, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		ModeMsg = { fg = palette.yellow_accent, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea      = { }, -- Area for messages and cmdline
 		-- MsgSeparator = { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		NormalFloat = { link = "Normal" }, -- Normal text in floating windows.
-		NormalNC = { link = "Normal" }, -- normal text in non-current windows
-		Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
-		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
-		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
+		NormalFloat = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
+		FloatBorder = { bg = palette.background, fg = palette.purple }, -- Normal text in floating windows.
+		-- NormalNC     = { }, -- normal text in non-current windows
+        Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
+        PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
+        PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
+        PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
-		Search = { fg = palette.lightest, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		Search = { fg = palette.light, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+        QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine = { bg = Normal.bg.mix(Search.bg, 40)  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		SpecialKey = { link = "Directory" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		-- SpellBad     = { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		-- SpellCap     = { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		-- SpellLocal   = { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		-- SpellRare    = { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { bg = palette.focus, fg = "#BBBBBB" }, -- status line of current window
-		StatusLineNC = { bg = palette.focus, fg = "#BBBBBB" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLine = { bg = palette.darker, fg = "#898989" }, -- status line of current window
+		StatusLineNC = { bg = palette.darker, fg = "#898989" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
-		TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
-		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
-		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
+        TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
+        TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
+        TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
 		Title = { fg = palette.green, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
@@ -77,14 +78,14 @@ function M.setup()
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
 		Constant = { fg = palette.purple }, -- (preferred) any constant
-		String = { fg = palette.green }, --   a string constant: "this is a string"
+		String = { fg = palette.pink }, --   a string constant: "this is a string"
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
 		Boolean = { fg = palette.yellow }, --  a boolean constant: TRUE, false
-		Float = { fg = palette.lightest }, --    a floating point constant: 2.3e10
+		Float = { fg = palette.yellow }, --    a floating point constant: 2.3e10
 
-        Identifier = { fg = palette.light }, -- (preferred) any variable name
-		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
+		Identifier = { fg = palette.light }, -- (preferred) any variable name
+		Function = { fg = palette.lightest, bold = true }, -- function name (also: methods for classes)
 
 		Keyword = { fg = palette.cyan }, --  any other keyword
 		Statement = { link = "Keyword" }, -- (preferred) any statement
@@ -100,14 +101,14 @@ function M.setup()
 		Macro = { fg = palette.green, bold = true }, --    same as Define
 		PreCondit = { link = "Keyword" }, --  preprocessor #if, #else, #endif, etc.
 
-		Type = { fg = palette.red }, -- (preferred) int, long, char, etc.
+		Type = { fg = palette.light_blue }, -- (preferred) int, long, char, etc.
 		-- StorageClass   = { fg = "#A1B56C" }, -- static, register, volatile, etc.
 		Structure = { link = "Type" }, --  struct, union, enum, etc.
 		Typedef = { link = "Type" }, --  A typedef
 
 		Special = { fg = palette.light }, -- (preferred) any special symbol
 		SpecialChar = { fg = palette.yellow }, --  special character in a constant
-		-- Tag            = { }, --    you can use CTRL-] on this
+		Tag = { fg = palette.blue }, --    you can use CTRL-] on this
 		Delimiter = { fg = palette.light }, --  character that needs attention
 		-- SpecialComment = { }, -- special things inside a comment
 		-- Debug          = { }, --    debugging statements
@@ -125,7 +126,7 @@ function M.setup()
 
 		DiagnosticError = { bg = palette.error_bg, fg = palette.red_error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
 		DiagnosticWarn = { bg = palette.warning_bg, fg = palette.orange_accent }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticInfo = { bg = palette.info_bg, fg = palette.green }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo = { bg = palette.info_bg, fg = palette.light }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
 		DiagnosticHint = { bg = palette.hint_bg, fg = palette.blue }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
 		-- DiagnosticVirtualTextError = { }, -- Used for "Error" diagnostic virtual text.
 		-- DiagnosticVirtualTextWarn  = { }, -- Used for "Warn" diagnostic virtual text.
@@ -146,44 +147,47 @@ function M.setup()
 
 		-- These groups are for tree-sitter:
 
-		["@attribute"] = { fg = palette.green }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-		-- ["@boolean"]            = { }, -- Boolean literals: `True` and `False` in Python.
+		["@attribute"] = { fg = palette.lime }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
+		["@boolean"] = { fg = palette.yellow }, -- Boolean literals: `True` and `False` in Python.
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-		["@constant"] = { bold = true }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
-		["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
+		["@constant"] = { fg = palette.purple }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
+		-- ["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
+		["@constant.builtin"] = { fg = palette.coral }, -- Built-in constant values: `nil` in Lua.
 		-- ["@constant.macro"]         = { }, -- Constants defined by macros: `NULL` in C.
 		["@constructor"] = { fg = palette.yellow }, -- Constructor calls and definitions: `= {}` in Lua, and Java constructors.
-		-- ["@error"]              = { }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
+		["@error"] = { fg = palette.red_error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
 		["@exception"] = { fg = palette.purple }, -- Exception related keywords: `try`, `except`, `finally` in Python.
-		-- ["@field"]              = { }, -- Object and struct fields.
+		["@field"] = { fg = palette.cyan }, -- Object and struct fields.
 		-- ["@float"]              = { }, -- Floating-point number literals.
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
-		["@function.builtin"] = { fg = palette.green_accent }, -- Built-in functions: `print` in Lua.
-		["@function.macro"] = { fg = palette.green_accent }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-		["@include"] = { bold = true }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
+		["@function.call"] = { fg = palette.yellow },
+		["@function.builtin"] = { fg = palette.lime }, -- Built-in functions: `print` in Lua.
+		["@function.macro"] = { fg = palette.lime }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+		["@function.method.call"] = { link = "@function.call" }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+		["@include"] = { fg = palette.lime }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 		["@keyword"] = { fg = palette.cyan }, -- Keywords that don't fit into other categories.
-		-- ["@keyword.function"]    = { }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
+		["@keyword.function"] = { link = "@keyword" }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		-- ["@keyword.return"]      = { }, -- Keywords like `return` and `yield`.
 		["@label"] = { fg = palette.yellow }, -- GOTO labels: `label:` in C, and `::label::` in Lua.
-		-- ["@method"]             = { }, -- Method calls and definitions.
-		["@namespace"] = { fg = palette.green }, -- Identifiers referring to modules and namespaces.
+		["@method"] = { fg = palette.yellow }, -- Method calls and definitions.
+		["@namespace"] = { fg = palette.lightest }, -- Identifiers referring to modules and namespaces.
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
-		["@operator"] = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-		["@parameter"] = { fg = palette.pink }, -- Parameters of a function.
-		["@parameter.reference"] = { fg = palette.purple }, -- References to parameters of a function.
-		-- ["@property"]           = { }, -- Same as `["@field"]`.
+		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
+		-- ["@parameter"]          = { }, -- Parameters of a function.
+		-- ["@parameter.reference"] = { }, -- References to parameters of a function.
+		["@property"] = { fg = palette.purple }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
 		-- ["@repeat"]             = { }, -- Keywords related to loops: `for`, `while`, etc.
-		["@string"] = { fg = "#83AE5B" }, -- String literals.
+        ["@string"] = { fg = "#83AE5B" }, -- String literals.
 		-- ["@string.regex"]        = { }, -- Regular expression literals.
 		-- ["@string.escape"]       = { }, -- Escape characters within a string: `\n`, `\t`, etc.
-		["@string.special"] = { fg = palette.green_accent }, -- Strings with special meaning that don't fit into the previous categories.
+		["@string.special"] = { fg = palette.cyan }, -- Strings with special meaning that don't fit into the previous categories.
 		-- ["@symbol"]             = { }, -- Identifiers referring to symbols or atoms.
 		["@tag"] = { fg = palette.light_blue }, -- Tags like HTML tag names.
 		["@tag.attribute"] = { fg = palette.purple }, -- HTML tag attributes.
@@ -201,12 +205,16 @@ function M.setup()
 		-- ["@environment"]        = { }, -- Text environments of markup languages.
 		-- ["@environment.name"]    = { }, -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
 		-- ["@note"]               = { }, -- Text representation of an informational note.
-		-- ["@warning"]            = { }, -- Text representation of a warning note.
+		["@warning"] = { fg = palette.yellow_accent }, -- Text representation of a warning note.
 		["@danger"] = { fg = palette.red_error }, -- Text representation of a danger note.
-		["@type"] = { fg = palette.light_blue }, -- Type (and class) definitions and annotations.
-		["@type_builtin"] = { fg = palette.cyan }, -- Built-in types: `i32` in Rust.
+		["@type"] = { link = "Type" }, -- Type (and class) definitions and annotations.
+		["@type.builtin"] = { link = "Type" }, -- Built-in types: `i32` in Rust.
+		["@type.definition"] = { link = "Type" },
+		["@type.identifier"] = { link = "Type" },
 		["@variable"] = { fg = palette.light }, -- Variable names that don't fit into other categories.
-		-- ["@variable.builtin"]    = { Identifier }, -- Variable names defined by the language: `this` or `self` in Javascript.
+		["@variable.member"] = { fg = palette.purple }, -- Variable names that don't fit into other categories.
+		-- ["@variable.builtin"] = { link = "Identifier" }, -- Variable names defined by the language: `this` or `self` in Javascript.
+		["@variable.builtin"] = { fg = palette.coral }, -- Variable names defined by the language: `this` or `self` in Javascript.
 
 		-- These groups are for the native LSP client and diagnostic system. Some
 		-- other LSP clients may use these groups, or use their own. Consult your
@@ -217,19 +225,17 @@ function M.setup()
 		["@lsp.type.decorator"] = { link = "@parameter" },
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.enumMember"] = { link = "@constant" },
-		["@lsp.type.function"] = { link = "@function" },
+		["@lsp.type.function"] = { fg = "NONE" },
 		["@lsp.type.interface"] = { link = "@keyword" },
 		["@lsp.type.macro"] = { link = "@macro" },
 		["@lsp.type.method"] = { link = "@method" },
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
-		["@lsp.type.struct"] = { link = "@constructor" },
+		["@lsp.type.struct"] = { link = "@type" },
 		["@lsp.type.type"] = { link = "@type" },
 		["@lsp.type.typeParameter"] = { link = "@type.definition" },
 		["@lsp.type.variable"] = { link = "@variable" },
-
-		IndentBlanklineChar = { fg = palette.darker },
 
 		TSRainbowRed = { fg = palette.red },
 		TSRainbowYellow = { fg = palette.yellow },
@@ -238,6 +244,110 @@ function M.setup()
 		TSRainbowGreen = { fg = palette.green },
 		TSRainbowViolet = { fg = palette.purple },
 		TSRainbowCyan = { fg = palette.cyan },
+
+		-- nvim-cmp
+
+		CmpItemAbbrDeprecated = { bg = "NONE", strikethrough = true, fg = palette.dark_gray },
+		CmpItemAbbrMatch = { bg = "NONE", fg = palette.blue },
+		CmpItemAbbrMatchFuzzy = { link = "CmpIntemAbbrMatch" },
+		CmpItemKindVariable = { bg = "NONE", fg = palette.light_blue },
+		CmpItemKindInterface = { link = "CmpItemKindVariable" },
+		CmpItemKindText = { link = "CmpItemKindVariable" },
+		CmpItemKindFunction = { bg = "NONE", fg = palette.pink },
+		CmpItemKindMethod = { link = "CmpItemKindFunction" },
+		CmpItemKindKeyword = { bg = "NONE", fg = palette.light },
+		CmpItemKindProperty = { link = "CmpItemKindKeyword" },
+		CmpItemKindUnit = { link = "CmpItemKindKeyword" },
+
+		CmpDocumentation = { link = "NormalFloat" },
+		CmpDocumentationBorder = { link = "FloatBorder" },
+		CmpCompletion = { link = "Pmenu" },
+		CmpCompletionSel = { fg = "NONE", bg = palette.dark_gray },
+		CmpCompletionBorder = { fg = palette.purple, bg = palette.dark_gray },
+		CmpCompletionThumb = { link = "PmenuThumb" },
+		CmpCompletionSbar = { link = "PmenuSbar" },
+		CmpItemAbbr = { fg = palette.light },
+		CmpItemKindDefault = { fg = palette.light },
+		CmpItemMenu = { fg = palette.light_gray },
+
+		-- rainbow-delimiters
+		RainbowDelimiterRed = { fg = palette.red },
+		RainbowDelimiterYellow = { fg = palette.yellow },
+		RainbowDelimiterBlue = { fg = palette.blue },
+		RainbowDelimiterOrange = { fg = palette.orange },
+		RainbowDelimiterGreen = { fg = palette.green },
+		RainbowDelimiterViolet = { fg = palette.purple },
+		RainbowDelimiterCyan = { fg = palette.cyan },
+
+		-- nvimtree
+
+		NvimTreeFolderName = { fg = palette.blue },
+		NvimTreeFolderIcon = { fg = palette.blue },
+		NvimTreeNormal = { fg = palette.light, bg = palette.background },
+		NvimTreeOpenedFolderName = { fg = palette.blue },
+		NvimTreeEmptyFolderName = { fg = palette.blue },
+		NvimTreeRootFolder = { fg = palette.purple, bold = true },
+		NvimTreeSymlink = { fg = palette.pink },
+		NvimTreeStatuslineNc = { fg = palette.green_accent, bg = palette.green_accent },
+		NvimTreeGitDirty = { fg = palette.yellow },
+		NvimTreeGitNew = { fg = palette.blue },
+		NvimTreeGitDeleted = { fg = palette.red },
+		NvimTreeSpecialFile = { fg = palette.orange },
+		NvimTreeImageFile = { fg = palette.light },
+		NvimTreeOpenedFile = { fg = palette.pink },
+
+		-- Lazy
+		LazyProgressTodo = { fg = palette.lightest },
+
+		-- neovim
+		healthError = { fg = palette.red_error },
+		healthSuccess = { fg = palette.green },
+		healthWarning = { fg = palette.yellow },
+
+		-- dashboard
+		DashboardShortCut = { fg = palette.cyan },
+		DashboardHeader = { fg = palette.blue },
+		DashboardCenter = { fg = palette.pink },
+		DashboardFooter = { fg = palette.blue },
+		DashboardKey = { fg = palette.orange },
+		DashboardDesc = { fg = palette.cyan },
+		DashboardIcon = { fg = palette.cyan, bold = true },
+
+		-- Telescope
+		TelescopeBorder = { fg = palette.blue_accent, bg = palette.darkest },
+		TelescopeTitle = { fg = palette.cyan },
+		TelescopeSelection = { link = "CursorLine" },
+		TelescopeSelectionCaret = { link = "CursorLineNr" },
+		TelescopeResultsClass = { link = "Structure" },
+		TelescopeResultsStruct = { link = "Structure" },
+		TelescopeResultsField = { link = "@field" },
+		TelescopeResultsMethod = { link = "Function" },
+		TelescopeResultsVariable = { link = "@variable" },
+
+		-- gitsigns
+		GitSignsAdd = { fg = palette.green },
+		GitSignsChange = { fg = palette.yellow },
+		GitSignsDelete = { fg = palette.red },
+
+		-- blink
+		BlinkCmpMenu = { link = "Pmenu" },
+		BlinkCmpMenuBorder = { fg = "NONE", bg = "NONE" },
+		BlinkCmpMenuSelection = { bg = "#23497B", fg = palette.light },
+		BlinkCmpLabel = { link = "Normal" },
+		BlinkCmpLabelDeprecated = { fg = palette.dark_gray, strikethrough = true },
+		BlinkCmpLabelMatch = { fg = palette.blue },
+		BlinkCmpDoc = { link = "NormalFloat" },
+		BlinkCmpDocBorder = { link = "BlinkCmpMenuBorder" },
+		BlinkCmpDocCursorLine = { link = "Visual" },
+		BlinkCmpSignatureHelp = { link = "NormalFloat" },
+		BlinkCmpSignatureHelpBorder = { link = "BlinkCmpMenuBorder" },
+		BlinkCmpSignatureHelpActiveParameter = { fg = palette.blue },
+
+		-- bufferline
+		BufferLineFill = { bg = palette.darker },
+
+		-- leap
+		LeapBackdrop = { link = "Comment" },
 	}
 
 	for group, hl in pairs(config.overrides) do

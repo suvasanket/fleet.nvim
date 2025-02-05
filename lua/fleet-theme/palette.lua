@@ -35,10 +35,12 @@ M.palette = {
     diff_plus = "#D0E8C5",
     focus = "#202020",
 
-    error_bg = "#4d2a2c",
-    warning_bg = "#4e321b",
-    info_bg = "#AAB99A",
-    hint_bg = "#263c50",
+	error_bg = "#4d2a2c",
+	warning_bg = "#4e321b",
+	info_bg = "#484849",
+	hint_bg = "#263c50",
+
+	none = "NONE",
 }
 
 return M
