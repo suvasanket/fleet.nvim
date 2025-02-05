@@ -58,7 +58,7 @@ function M.setup()
 		-- SpellLocal   = { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		-- SpellRare    = { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 		StatusLine = { bg = palette.focus, fg = "#898989" }, -- status line of current window
-		StatusLineNC = { bg = palette.darker, fg = "#898989" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		StatusLineNC = { bg = palette.focus, fg = "#898989" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
         TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
         TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
@@ -77,7 +77,7 @@ function M.setup()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant = { fg = palette.purple }, -- (preferred) any constant
+		Constant = { fg = palette.red }, -- (preferred) any constant
 		String = { fg = palette.pink }, --   a string constant: "this is a string"
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
@@ -152,7 +152,7 @@ function M.setup()
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-		["@constant"] = { fg = palette.purple }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
+		["@constant"] = { fg = palette.red }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
 		-- ["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
 		["@constant.builtin"] = { fg = palette.coral }, -- Built-in constant values: `nil` in Lua.
 		-- ["@constant.macro"]         = { }, -- Constants defined by macros: `NULL` in C.
@@ -179,7 +179,7 @@ function M.setup()
 		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		-- ["@parameter"]          = { }, -- Parameters of a function.
 		-- ["@parameter.reference"] = { }, -- References to parameters of a function.
-		["@property"] = { fg = palette.purple }, -- Same as `["@field"]`.
+		["@property"] = { fg = palette.pink }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
@@ -332,7 +332,7 @@ function M.setup()
 		-- blink
 		BlinkCmpMenu = { link = "Pmenu" },
 		BlinkCmpMenuBorder = { fg = "NONE", bg = "NONE" },
-		BlinkCmpMenuSelection = { bg = "#23497B", fg = palette.light },
+		BlinkCmpMenuSelection = { bg = palette.darker, fg = palette.light },
 		BlinkCmpLabel = { link = "Normal" },
 		BlinkCmpLabelDeprecated = { fg = palette.dark_gray, strikethrough = true },
 		BlinkCmpLabelMatch = { fg = palette.blue },
