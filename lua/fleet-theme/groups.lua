@@ -42,7 +42,7 @@ function M.setup()
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		NormalFloat = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
-		FloatBorder = { bg = palette.background, fg = palette.purple }, -- Normal text in floating windows.
+		FloatBorder = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
 		-- NormalNC     = { }, -- normal text in non-current windows
         Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
         PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
@@ -57,7 +57,7 @@ function M.setup()
 		-- SpellCap     = { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		-- SpellLocal   = { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
 		-- SpellRare    = { }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		StatusLine = { bg = palette.darker, fg = "#898989" }, -- status line of current window
+		StatusLine = { bg = palette.focus, fg = "#898989" }, -- status line of current window
 		StatusLineNC = { bg = palette.darker, fg = "#898989" }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
         TabLine = { bg = palette.focus, fg = palette.light }, -- tab pages line, not active tab page label
