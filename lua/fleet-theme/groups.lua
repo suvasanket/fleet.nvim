@@ -163,7 +163,7 @@ function M.setup()
 		["@function.builtin"] = { fg = palette.green }, -- Built-in functions: `print` in Lua.
 		["@function.macro"] = { fg = palette.green }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
 		-- ["@include"]            = { }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
-		["@keyword"] = { fg = palette.cyan }, -- Keywords that don't fit into other categories.
+		["@keyword"] = { fg = palette.purple_accent }, -- Keywords that don't fit into other categories.
 		-- ["@keyword.function"]    = { }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		-- ["@keyword.return"]      = { }, -- Keywords like `return` and `yield`.
@@ -173,8 +173,8 @@ function M.setup()
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
 		["@operator"]           = { fg = palette.lightest }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
-		["@parameter"] = { fg = palette.pink_accent }, -- Parameters of a function.
-		["@parameter.reference"] = { fg = palette.pink }, -- References to parameters of a function.
+		["@parameter"] = { fg = palette.pink }, -- Parameters of a function.
+		["@parameter.reference"] = { fg = palette.purple }, -- References to parameters of a function.
 		-- ["@property"]           = { }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
