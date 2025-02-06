@@ -64,7 +64,7 @@ function M.setup()
 		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
 		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
-		Title = { fg = palette.green, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+		Title = { fg = palette.purple, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
 		-- VisualNOS    = { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = palette.yellow_accent }, -- warning messages
@@ -98,7 +98,7 @@ function M.setup()
 		PreProc = { link = "Keyword" }, -- (preferred) generic Preprocessor
 		Include = { link = "Keyword" }, --  preprocessor #include
 		Define = { link = "Keyword" }, --   preprocessor #define
-		Macro = { fg = palette.green, bold = true }, --    same as Define
+		Macro = { fg = palette.purple, bold = true }, --    same as Define
 		PreCondit = { link = "Keyword" }, --  preprocessor #if, #else, #endif, etc.
 
 		Type = { fg = palette.light_blue }, -- (preferred) int, long, char, etc.
@@ -190,7 +190,7 @@ function M.setup()
 		["@string.special"] = { fg = palette.cyan }, -- Strings with special meaning that don't fit into the previous categories.
 		-- ["@symbol"]             = { }, -- Identifiers referring to symbols or atoms.
 		["@tag"] = { fg = palette.light_blue }, -- Tags like HTML tag names.
-		["@tag.attribute"] = { fg = palette.purple }, -- HTML tag attributes.
+		["@tag.attribute"] = { fg = palette.green }, -- HTML tag attributes.
 		["@tag.delimiter"] = { fg = palette.light_gray }, -- Tag delimiters like `<` `>` `/`.
 		-- ["@text"]               = { }, -- Non-structured text. Like text in a markup language.
 		-- ["@strong"]             = { }, -- Text to be represented in bold.
