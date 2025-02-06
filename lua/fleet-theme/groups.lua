@@ -64,7 +64,7 @@ function M.setup()
 		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
 		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
-		Title = { fg = palette.purple, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+		Title = { fg = palette.purple_accent, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
 		-- VisualNOS    = { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = palette.yellow_accent }, -- warning messages
@@ -212,7 +212,7 @@ function M.setup()
 		["@type.definition"] = { link = "Type" },
 		["@type.identifier"] = { link = "Type" },
 		["@variable"] = { fg = palette.light }, -- Variable names that don't fit into other categories.
-		["@variable.member"] = { fg = palette.purple }, -- Variable names that don't fit into other categories.
+		["@variable.member"] = { fg = palette.lighter }, -- Variable names that don't fit into other categories.
 		-- ["@variable.builtin"] = { link = "Identifier" }, -- Variable names defined by the language: `this` or `self` in Javascript.
 		["@variable.builtin"] = { fg = palette.coral }, -- Variable names defined by the language: `this` or `self` in Javascript.
 
