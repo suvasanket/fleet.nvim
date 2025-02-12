@@ -64,7 +64,7 @@ function M.setup()
 		TabLineFill = { link = "TabLine" }, -- tab pages line, where there are no labels
 		TabLineSel = { bg = "NONE", fg = palette.light, bold = true }, -- tab pages line, active tab page label
 
-		Title = { fg = palette.purple_accent, bg = palette.purple, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+		Title = { fg = palette.purple_accent, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { bg = palette.selection }, -- Visual mode selection
 		-- VisualNOS    = { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		WarningMsg = { fg = palette.yellow_accent }, -- warning messages
@@ -357,7 +357,8 @@ function M.setup()
 		-- snacks
 		SnacksNotifierBorderInfo = { link = "@string" },
 		SnacksNotifierTitleInfo = { link = "@string" },
-		SnacksPickerBorder = { fg = palette.none, bg = palette.dark_gray },
+        SnacksPickerBorder = { fg = palette.dark_gray },
+        SnacksPickerTitle = { bg = palette.dark_gray },
 	}
 
 	for group, hl in pairs(config.overrides) do

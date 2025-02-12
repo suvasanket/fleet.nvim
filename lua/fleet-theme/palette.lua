@@ -32,7 +32,7 @@ M.palette = {
     red_accent = "#FF4545",
 
     red_error = "#F95454",
-    selection = "#303030",
+    selection = "#252525",
     diff_plus = "#D0E8C5",
     focus = "#202020",
 
