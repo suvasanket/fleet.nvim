@@ -351,12 +351,13 @@ function M.setup()
 
 		-- mini statusline
 		MiniStatuslineModeNormal = { bold = true },
-		MiniStatuslineModeCommand = { bg = palette.focus, fg = palette.purple_accent },
-		MiniStatuslineModeOther = { bg = palette.focus, fg = palette.yellow_accent },
+		MiniStatuslineModeCommand = { bg = palette.darkest, fg = palette.purple_accent, bold = true },
+		MiniStatuslineModeOther = { bg = palette.darkest, fg = palette.yellow_accent, bold = true },
 
-		-- snacks notifier
+		-- snacks
 		SnacksNotifierBorderInfo = { link = "@string" },
 		SnacksNotifierTitleInfo = { link = "@string" },
+        SnacksPickerBorder = { fg = palette.darker },
 	}
 
 	for group, hl in pairs(config.overrides) do
