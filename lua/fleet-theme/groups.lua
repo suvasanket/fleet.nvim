@@ -356,6 +356,8 @@ function M.setup()
 
 		-- snacks
 		SnacksNotifierBorderInfo = { link = "@string" },
+		SnacksNotifierBorderWarn = { bg = palette.none },
+		SnacksNotifierBorderError = { bg = palette.none },
 		SnacksNotifierTitleInfo = { link = "@string" },
         SnacksPickerBorder = { fg = palette.dark_gray },
         SnacksPickerTitle = { bg = palette.dark_gray },
