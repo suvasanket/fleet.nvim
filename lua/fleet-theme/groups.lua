@@ -357,7 +357,8 @@ function M.setup()
 		-- snacks
 		SnacksNotifierBorderInfo = { link = "@string" },
 		SnacksNotifierTitleInfo = { link = "@string" },
-        SnacksPickerBorder = { fg = palette.darker },
+		SnacksPicker = { bg = palette.none },
+        SnacksPickerBorder = { fg = palette.dark_gray },
 	}
 
 	for group, hl in pairs(config.overrides) do
