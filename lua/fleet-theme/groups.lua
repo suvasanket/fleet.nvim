@@ -136,14 +136,14 @@ function M.setup()
 		DiagnosticUnderlineWarn = { sp = palette.orange_accent, undercurl = true }, -- Used to underline "Warn" diagnostics.
 		DiagnosticUnderlineInfo = { sp = palette.light, undercurl = true }, -- Used to underline "Info" diagnostics.
 		DiagnosticUnderlineHint = { sp = palette.blue, undercurl = true }, -- Used to underline "Hint" diagnostics.
+		DiagnosticSignError = { bg = palette.none }, -- Used for "Error" signs in sign column.
+		DiagnosticSignWarn = { bg = palette.none }, -- Used for "Warn" signs in sign column.
+		DiagnosticSignInfo = { bg = palette.none }, -- Used for "Info" signs in sign column.
+		DiagnosticSignHint = { bg = palette.none }, -- Used for "Hint" signs in sign column.
 		-- DiagnosticFloatingError    = { }, -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
 		-- DiagnosticFloatingWarn     = { }, -- Used to color "Warn" diagnostic messages in diagnostics float.
 		-- DiagnosticFloatingInfo     = { }, -- Used to color "Info" diagnostic messages in diagnostics float.
 		-- DiagnosticFloatingHint     = { }, -- Used to color "Hint" diagnostic messages in diagnostics float.
-		-- DiagnosticSignError        = { }, -- Used for "Error" signs in sign column.
-		-- DiagnosticSignWarn         = { }, -- Used for "Warn" signs in sign column.
-		-- DiagnosticSignInfo         = { }, -- Used for "Info" signs in sign column.
-		-- DiagnosticSignHint         = { }, -- Used for "Hint" signs in sign column.
 
 		-- These groups are for tree-sitter:
 
@@ -348,6 +348,15 @@ function M.setup()
 
 		-- leap
 		LeapBackdrop = { link = "Comment" },
+
+		-- mini statusline
+		MiniStatuslineModeNormal = { bold = true },
+		MiniStatuslineModeCommand = { bg = palette.focus, fg = palette.purple_accent },
+		MiniStatuslineModeOther = { bg = palette.focus, fg = palette.yellow_accent },
+
+		-- snacks notifier
+		SnacksNotifierBorderInfo = { link = "@string" },
+		SnacksNotifierTitleInfo = { link = "@string" },
 	}
 
 	for group, hl in pairs(config.overrides) do
