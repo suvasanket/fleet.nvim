@@ -25,7 +25,7 @@ function M.setup()
 		EndOfBuffer = { fg = palette.background, bold = true }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		-- TermCursor   = { }, -- cursor in a focused terminal
 		-- TermCursorNC = { }, -- cursor in an unfocused terminal
-		ErrorMsg = { fg = palette.red_error, underline = true }, -- error messages on the command line
+		ErrorMsg = { fg = palette.red_error, Bold = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
 		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
 		Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
@@ -50,7 +50,7 @@ function M.setup()
 		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
 		Search = { fg = palette.light, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		QuickFixLine = { fg = palette.lightest, bg = palette.dark_gray }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { bg = palette.focus, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		-- QuickFixLine = { bg = Normal.bg.mix(Search.bg, 40)  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		SpecialKey = { link = "Directory" }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		-- SpellBad     = { }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -359,8 +359,8 @@ function M.setup()
 		SnacksNotifierBorderWarn = { bg = palette.none },
 		SnacksNotifierBorderError = { bg = palette.none },
 		SnacksNotifierTitleInfo = { link = "@string" },
-        SnacksPickerBorder = { fg = palette.dark_gray },
-        SnacksPickerTitle = { bg = palette.dark_gray },
+		SnacksPickerBorder = { fg = palette.dark_gray },
+		SnacksPickerTitle = { bg = palette.dark_gray },
 	}
 
 	for group, hl in pairs(config.overrides) do
