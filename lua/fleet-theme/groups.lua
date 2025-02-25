@@ -25,7 +25,7 @@ function M.setup()
 		EndOfBuffer = { fg = palette.background, bold = true }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		-- TermCursor   = { }, -- cursor in a focused terminal
 		-- TermCursorNC = { }, -- cursor in an unfocused terminal
-		ErrorMsg = { fg = palette.red_error, Bold = true }, -- error messages on the command line
+        ErrorMsg = { fg = palette.red_error, bold = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
 		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
 		Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
