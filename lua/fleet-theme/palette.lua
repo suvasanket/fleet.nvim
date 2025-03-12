@@ -11,7 +11,8 @@ M.palette = {
     lightest = "#FFFFFF",
 
     dark_gray = "#353535",
-    light_gray = "#606060",
+    mid_gray = "#606060",
+    light_gray = "#7D7C7C",
     purple = "#a390f0",
     light_blue = "#A1E3F9",
     blue = "#98D8EF",

@@ -6,7 +6,7 @@ function M.setup()
 
 	local groups = {
 		Normal = { bg = palette.background, fg = palette.light }, -- normal text
-		Comment = { fg = palette.light_gray, italic = true }, -- any comment
+		Comment = { fg = palette.mid_gray, italic = true }, -- any comment
 		-- ColorColumn  = { }, -- used for the columns set with 'colorcolumn'
 		Conceal = { fg = palette.purple, bold = true }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { bg = palette.light, fg = palette.dark_gray }, -- character under the cursor
@@ -25,10 +25,10 @@ function M.setup()
 		EndOfBuffer = { fg = palette.background, bold = true }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		-- TermCursor   = { }, -- cursor in a focused terminal
 		-- TermCursorNC = { }, -- cursor in an unfocused terminal
-        ErrorMsg = { fg = palette.red_error, bold = true }, -- error messages on the command line
+		ErrorMsg = { fg = palette.red_error, bold = true }, -- error messages on the command line
 		VertSplit = { bg = palette.background, fg = palette.darker }, -- the column separating vertically split windows
 		WinSeparator = { link = "FloatBorder" }, -- highlights window separators
-		Folded = { bg = palette.none, fg = "#7D7C7C" }, -- line used for closed folds
+		Folded = { bg = palette.none, fg = palette.light_gray }, -- line used for closed folds
 		-- FoldColumn   = { }, -- 'foldcolumn'
 		SignColumn = { bg = palette.background, fg = palette.dark_gray }, -- column where |signs| are displayed
 		-- IncSearch    = { }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -36,8 +36,8 @@ function M.setup()
 		LineNr = { fg = palette.dark_gray }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr = { bg = palette.darker, fg = palette.light, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen = { bg = palette.darker, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = palette.yellow_accent, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		-- MsgArea      = { }, -- Area for messages and cmdline
+		ModeMsg = { fg = palette.lightest, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
+		MsgArea = { fg = palette.light }, -- Area for messages and cmdline
 		-- MsgSeparator = { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -47,7 +47,7 @@ function M.setup()
 		Pmenu = { bg = palette.focus, fg = palette.light }, -- Popup menu: normal item.
 		PmenuSel = { bg = palette.selection, fg = palette.lighter, bold = true }, -- Popup menu: selected item.
 		PmenuSbar = { bg = palette.darker, fg = palette.light, bold = true }, -- Popup menu: scrollbar.
-		PmenuThumb = { bg = palette.light_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
+		PmenuThumb = { bg = palette.mid_gray, fg = palette.light, bold = true }, -- Popup menu: Thumb of the scrollbar.
 		-- Question     = { }, -- |hit-enter| prompt and yes/no questions
 		Search = { fg = palette.light, bg = palette.selection, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		QuickFixLine = { bg = palette.focus, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
@@ -191,7 +191,7 @@ function M.setup()
 		-- ["@symbol"]             = { }, -- Identifiers referring to symbols or atoms.
 		["@tag"] = { fg = palette.light_blue }, -- Tags like HTML tag names.
 		["@tag.attribute"] = { fg = palette.green }, -- HTML tag attributes.
-		["@tag.delimiter"] = { fg = palette.light_gray }, -- Tag delimiters like `<` `>` `/`.
+		["@tag.delimiter"] = { fg = palette.mid_gray }, -- Tag delimiters like `<` `>` `/`.
 		-- ["@text"]               = { }, -- Non-structured text. Like text in a markup language.
 		-- ["@strong"]             = { }, -- Text to be represented in bold.
 		-- ["@emphasis"]           = { }, -- Text to be represented with emphasis.
@@ -268,7 +268,7 @@ function M.setup()
 		CmpCompletionSbar = { link = "PmenuSbar" },
 		CmpItemAbbr = { fg = palette.light },
 		CmpItemKindDefault = { fg = palette.light },
-		CmpItemMenu = { fg = palette.light_gray },
+		CmpItemMenu = { fg = palette.mid_gray },
 
 		-- rainbow-delimiters
 		RainbowDelimiterRed = { fg = palette.red },
