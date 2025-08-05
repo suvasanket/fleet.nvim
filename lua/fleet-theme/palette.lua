@@ -39,7 +39,7 @@ M.palette = {
 
 	error_bg = "#4d2a2c",
 	warning_bg = "#4e321b",
-	info_bg = "#484849",
+	info_bg = "#423F3E",
 	hint_bg = "#263c50",
 
 	none = "NONE",

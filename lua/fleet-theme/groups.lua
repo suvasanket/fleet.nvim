@@ -77,7 +77,7 @@ function M.setup()
 		-- default,
 		-- Uncomment and edit if you want more specific syntax highlighting.
 
-		Constant = { fg = palette.red }, -- (preferred) any constant
+		Constant = { fg = palette.orange }, -- (preferred) any constant
 		String = { fg = "#83AE5B" }, --   a string constant: "this is a string"
 		Character = { fg = palette.yellow }, --  a character constant: 'c', '\n'
 		Number = { fg = palette.yellow }, --   a number constant: 234, 0xff
@@ -152,7 +152,7 @@ function M.setup()
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-		["@constant"] = { fg = palette.red }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
+		["@constant"] = { fg = palette.orange }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
 		-- ["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
 		["@constant.builtin"] = { fg = palette.coral }, -- Built-in constant values: `nil` in Lua.
 		-- ["@constant.macro"]         = { }, -- Constants defined by macros: `NULL` in C.
