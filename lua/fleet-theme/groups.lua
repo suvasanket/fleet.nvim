@@ -124,10 +124,10 @@ function M.setup()
 
 		Todo = { bg = palette.focus, fg = palette.light, bold = true }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-		DiagnosticError = { bg = palette.error_bg, fg = palette.red_error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticWarn = { bg = palette.warning_bg, fg = palette.orange_accent }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticInfo = { bg = palette.info_bg, fg = palette.light }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-		DiagnosticHint = { bg = palette.hint_bg, fg = palette.blue }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticError = { fg = palette.red_error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticWarn = { fg = palette.orange_accent, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticInfo = { fg = palette.light, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+		DiagnosticHint = { fg = palette.blue, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
 		-- DiagnosticVirtualTextError = { }, -- Used for "Error" diagnostic virtual text.
 		-- DiagnosticVirtualTextWarn  = { }, -- Used for "Warn" diagnostic virtual text.
 		-- DiagnosticVirtualTextInfo  = { }, -- Used for "Info" diagnostic virtual text.
@@ -349,10 +349,13 @@ function M.setup()
 		-- leap
 		LeapBackdrop = { link = "Comment" },
 
-		-- mini statusline
+		-- Mini.nvim
 		MiniStatuslineModeNormal = { bold = true },
 		MiniStatuslineModeCommand = { bg = palette.darkest, fg = palette.purple_accent, bold = true },
 		MiniStatuslineModeOther = { bg = palette.darkest, fg = palette.yellow_accent, bold = true },
+		MiniIconsAzure = { link = "WarningMsg" },
+
+		OilDir = { fg = palette.lighter, bold = true },
 
 		-- snacks
 		SnacksNotifierBorderInfo = { link = "@string" },
